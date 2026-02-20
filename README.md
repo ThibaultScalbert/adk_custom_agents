@@ -50,6 +50,18 @@ graph TD
     Agent3 --> End
 ```
 
+## 4. Silent LLM Agent Pattern
+**Location:** `silent_llm_agent_pattern/`
+
+The **Silent LLM Agent** is an `LlmAgent` that executes normally (populating state via tool calls or internal logic) but suppresses its final text response to the user. This is useful for "invisible" agents that work in the background without cluttering the conversation.
+
+```mermaid
+graph LR
+    UserInput --> SilentLlmAgent
+    SilentLlmAgent -->|Process| State[Session State]
+    SilentLlmAgent -.->|Suppress| Output[User Response (None)]
+```
+
 ## Getting Started
 
 1.  **Install Dependencies:**
@@ -63,6 +75,7 @@ graph TD
     python -m router_agent_pattern.test_agent
     python -m function_agent_pattern.test_agent
     python -m conditional_sequential_pattern.test_agent
+    python -m silent_llm_agent_pattern.test_agent
     ```
 
 3.  **Usage Examples:**
