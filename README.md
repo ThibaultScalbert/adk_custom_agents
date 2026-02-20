@@ -59,7 +59,7 @@ The **Silent LLM Agent** is an `LlmAgent` that executes normally (populating sta
 graph LR
     UserInput --> SilentLlmAgent
     SilentLlmAgent -->|Process| State[Session State]
-    SilentLlmAgent -.->|Suppress| Output[User Response (None)]
+    SilentLlmAgent -.->|Suppress| Output["User Response (None)"]
 ```
 
 ## Getting Started
